@@ -8,6 +8,10 @@ package src
 	 */
 	public class Game extends gameMC
 	{
+		public static var _game:Game;
+		
+		public var allPieces:Vector.<Piece> = new <Piece>[];
+		
 		private var grid:Grid = new Grid();
 		
 		private var counter:int = 0;
@@ -17,10 +21,10 @@ package src
 		
 		private var movePiece:Piece;
 		
-		private var allPieces:Vector.<Piece> = new <Piece>[];
-		
 		public function Game() 
 		{
+			_game = this;
+			
 			addChild(grid);
 			makePiece();
 			addEventListener(Event.ENTER_FRAME, loop);
@@ -28,8 +32,8 @@ package src
 		
 		private function loop(e:Event):void
 		{
+			stage.focus = Main._main;
 			Main._main.kh.updateKeys();
-			//trace(Keyboardhandeler.keys);
 			if (spaceCnt == 6) {
 				spaceHit();
 				spaceCnt = 1;
@@ -87,6 +91,8 @@ package src
 		{
 			if (movePiece != null) {
 				addToGrid(movePiece);
+				allPieces.push(movePiece);
+				grid.checkRows();
 			}
 			movePiece = new Piece();
 			addChild(movePiece);
@@ -105,7 +111,11 @@ package src
 		
 		private function spaceHit():void
 		{
-			movePiece.spaceHit();
+			movePiece.spaceHit(true);
+			var puntVec:Vector.<Point> = movePiece.getBlockPos();
+			if (!grid.checkPosition(puntVec)) {
+				movePiece.spaceHit(false);
+			}
 		}
 		
 		private function leftHit():void

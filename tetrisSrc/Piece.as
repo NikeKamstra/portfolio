@@ -32,6 +32,8 @@ package src
 		private var blokVec:Vector.<Block> = new Vector.<Block>;//alle blokken in het stukje
 		private var curHeight:int;
 		private var curWidth:int;
+		private var deletedBlocks:Vector.<int> = new Vector.<int>;
+		private var color:int;
 		
 		public var moving:Boolean = true;
 		
@@ -39,12 +41,13 @@ package src
 		public function Piece() 
 		{
 			var type:int = Math.floor(Math.random() * typeVec.length);// random type stukje
+			color = Math.floor(Math.random() * 8 + 0.25);
 			for (var i:int = 0; i < 5; i++) // aanmaken van de blokjes
 			{
 				for (var j:int = 0; j < 5; j++) 
 				{
 					if (typeVec[type][i*5+j] == 1) {
-						var blok:Block = new Block();
+						var blok:Block = new Block(color);
 						blok.x = j * blok.width + blok.width / 2;
 						blok.y = i * blok.height + blok.height / 2;
 						addChild(blok);
@@ -70,17 +73,24 @@ package src
 				blokVec[m].x -= xDif;
 				blokVec[m].y -= yDif;
 			}
-			
-			/*curHeight = height;
-			curWidth = width;
-			
-			for (var k:int = 0; k < blokVec.length; k++)//blokjes boven de pivit en in het midden zetten 
-			{
-				blokVec[k].x -= curWidth / 2;
-				blokVec[k].y -= curHeight / 2;
-			}*/
-			var bl:Block = new Block;
-			addChild(bl);
+		}
+		
+		public function moveDown(block:int):void
+		{
+			switch(rotation) {
+				case 0: 
+					blokVec[block].y += 50;
+					break;
+				case 90: 
+					blokVec[block].x += 50;
+					break;
+				case 180: 
+					blokVec[block].y -= 50;
+					break;
+				case -90: 
+					blokVec[block].x -= 50;
+					break;
+			}
 		}
 		
 		public function getBlockPos():Vector.<Point>
@@ -95,9 +105,30 @@ package src
 			return pntVec;
 		}
 		
-		public function spaceHit():void //(num - 5 * i) * 5 + (4 - i) // i = 1
+		public function deleteBlock(block:int):void
 		{
-			rotation += 90;
+			deletedBlocks.push(block);
+		}
+		
+		public function update():void
+		{
+			trace(deletedBlocks);
+			deletedBlocks.sort(Array.DESCENDING); 
+			for (var i:int = 0; i < deletedBlocks.length; i++) 
+			{
+				removeChild(blokVec[deletedBlocks[i]]);
+				blokVec.splice(deletedBlocks[i],1);
+			}
+			deletedBlocks.splice(0,deletedBlocks.length);
+		}
+		
+		public function spaceHit(hit:Boolean):void 
+		{
+			var rot:int = 90;
+			if (!hit) {
+				rot *= -1;
+			} 
+			rotation += rot;
 		}
 		
 		public function leftHit():void

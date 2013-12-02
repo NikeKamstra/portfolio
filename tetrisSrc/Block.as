@@ -8,11 +8,11 @@ package src
 	{
 		public var primairy:Boolean = false;
 
-		public function Block() 
+		public function Block(color:int) 
 		{
-			
+			gotoAndStop(color);
 		}
-		
+
 	}
 
 }

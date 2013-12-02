@@ -45,6 +45,7 @@ package src
 			game.y = maxH / 2;
 			
 			addChild(game);
+			stage.focus = this;
 		}
 		
 		private function ingdrkt(e:KeyboardEvent):void
