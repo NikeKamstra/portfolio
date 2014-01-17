@@ -25,7 +25,7 @@ package src
 			stage.addEventListener(MouseEvent.CLICK, SendEvent);
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, SendEvent);
 			stage.addEventListener(KeyboardEvent.KEY_UP, SendEvent);
-			//stage.addEventListener(Event.ENTER_FRAME, SendEvent);
+			stage.addEventListener(Event.ENTER_FRAME, SendEvent);
 		}
 		
 		private function SendEvent(e:Object):void
@@ -35,10 +35,10 @@ package src
 					controller.GetMouseEvent(MouseEvent(e));
 					break;
 				case KeyboardEvent.KEY_DOWN:
-					controller.GetKeyboardEvent(KeyboardEvent(e),true);
+					controller.GetKeyboardEvent(KeyboardEvent(e),false);
 					break;
 				case KeyboardEvent.KEY_UP:
-					controller.GetKeyboardEvent(KeyboardEvent(e),false);
+					controller.GetKeyboardEvent(KeyboardEvent(e),true);
 					break;
 				case Event.ENTER_FRAME:
 					controller.GetEvent(Event(e));

@@ -9,36 +9,38 @@ package src.View
 	 */
 	public class View extends Sprite
 	{
-		public const startScreen:StartScreen = new StartScreen();
 		public const playerPaddle:Paddle = new Paddle();
 		public const AIPaddle:Paddle = new Paddle();
 		public const ball:Ball = new Ball();
+		public const startScreen:StartScreen = new StartScreen();
+		public const gameScreen:GameScreen = new GameScreen();
 		
 		private var currentScreen = startScreen;
 		
 		public function View() 
 		{
-			addChild(startScreen);
+			addChild(currentScreen);
 		}
 		
 		public function AdjustPlayerPaddle(speed:int):void
 		{
-			
+			playerPaddle.y -= speed;
 		}
 		
 		public function AdjustAIPaddle(speed:int):void
 		{
-			
+			AIPaddle.y -= speed;
 		}
 		
-		public function AdjustScore(playerPoint:int,AIPoints:int):void
+		public function AdjustScore(playerWon:Boolean):void
 		{
-			
+			gameScreen.setScore(playerWon);
 		}
 		
 		public function AdjustBall(xPos:Number, yPos:Number):void
 		{
-			
+			ball.x += xPos;
+			ball.y += yPos;
 		}
 		
 		public function SetScreenPos(position:Point):void
@@ -58,15 +60,16 @@ package src.View
 			
 			AIPaddle.x = AIPos.x;
 			AIPaddle.y = AIPos.y;
-			
+
 			ball.x = ballPos.x;
 			ball.y = ballPos.y;
 		}
 		
 		public function AdjustScreen():void
 		{
-			currentScreen = null;
-			removeChild(startScreen);
+			removeChild(currentScreen);
+			currentScreen = gameScreen;
+			addChild(currentScreen);
 		}
 	}
 
