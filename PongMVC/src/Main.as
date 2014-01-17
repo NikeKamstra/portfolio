@@ -5,6 +5,7 @@ package src
 	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
 	import src.Controller.Controller;
+	import src.View.View;
 	
 	/**
 	 * ...
@@ -12,10 +13,15 @@ package src
 	 */
 	public class Main extends Sprite
 	{
-		private const controller:Controller = new Controller();
+		private const view:View = new View();
+		private var controller:Controller;
 		
 		public function Main() 
 		{
+			addChild(view);
+			
+			controller = new Controller(view,stage.stageHeight,stage.stageWidth);
+			
 			stage.addEventListener(MouseEvent.CLICK, SendEvent);
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, SendEvent);
 			stage.addEventListener(KeyboardEvent.KEY_UP, SendEvent);

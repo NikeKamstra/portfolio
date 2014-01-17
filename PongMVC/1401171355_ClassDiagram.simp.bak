@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="6" multi-file="no">
+  <meta>
+    <name>Project</name>
+    <authors> </authors>
+    <description />
+  </meta>
+  <management>
+    <persons>
+      <person id="P3cf893c82b9f410cb04d75c169cc44bc">
+        <first-name />
+        <last-name />
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <tasks />
+    <requirements />
+    <issues />
+    <to-dos />
+  </management>
+  <glossary />
+  <types>
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types>
+      <type id=":void" tid="" name=":void" description="" />
+      <type id="MouseEvent" tid="" name="MouseEvent" description="" />
+      <type id="KeyboardEvent" tid="" name="KeyboardEvent" description="" />
+      <type id=":String" tid="" name=":String" description="" />
+      <type id="Event" tid="" name="Event" description="" />
+      <type id="MouseEvent = null" tid="" name="MouseEvent = null" description="" />
+      <type id="KeyboardEvent = null" tid="" name="KeyboardEvent = null" description="" />
+      <type id="void" tid="" name="void" description="" />
+      <type id="int" tid="" name="int" description="" />
+      <type id="Number" tid="" name="Number" description="" />
+      <type id="Boolean = true" tid="" name="Boolean = true" description="" />
+      <type id="Boolean = false" tid="" name="Boolean = false" description="" />
+    </custom-types>
+  </types>
+  <filters />
+  <items />
+  <models>
+    <model id="p354408141811744276" name="Model 1" type="" namespace="" order-index="1">
+      <meta>
+        <authors>
+          <author> </author>
+        </authors>
+        <description />
+        <creation-date>01/17/2014 10:04:20</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <tagged-values />
+      <abstract-items />
+      <sub-models />
+      <diagram type="uml-class" id="p424787501868688169" name="ClassDiagram1" order-index="1" show-nullability="false">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>01/17/2014 10:04:20</creation-date>
+          <change-date>01/17/2014 12:57:25</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <tagged-values />
+        <abstract-items>
+          <item id="di280909535573763320" cid="PKG001" type="package" name="src" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="P3cf893c82b9f410cb04d75c169cc44bc" creation-date="01/17/2014 10:04:26">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <nestedItems />
+          </item>
+          <item id="di750395889309805888" cid="C001" type="class" name="Main" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="01/17/2014 10:04:53">
+            <stereotypes />
+            <tagged-values />
+            <documentation>
+              <text>
+                <content>
+                  <paragraph line-spacing="1">
+                    <p index="0">
+                      <t />
+                      <style font-name="Verdana" font-size="12" font-bold="false" font-italic="false" font-underline="false" font-strikeout="false">
+                        <text>
+                          <solid-brush color="#FF000000" />
+                        </text>
+                      </style>
+                    </p>
+                  </paragraph>
+                </content>
+              </text>
+            </documentation>
+            <cooperation>
+              <participants />
+              <comments />
+            </cooperation>
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <attributes />
+            <operations>
+              <operation id="o65c5007b0782484bb39ddc1e46c0652c219" name="EventListener" type="" type-id="" visibility="public" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="CLICK" type="MouseEvent" type-id="MouseEvent" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="oc7e677ae52694a449cc5d9f3b8d220bf594" name="EventListener" type="" type-id="" visibility="public" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="KEY_DOWN" type="KeyboardEvent" type-id="KeyboardEvent" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="odc411b8cb7f74d11812c707b2eee8d67435" name="EventListener" type="" type-id="" visibility="public" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="KEY_UP" type="KeyboardEvent" type-id="KeyboardEvent" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="o45b48cf8a0e54f008e643b0cc9f854e7825" name="EventListener" type="" type-id="" visibility="public" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="ENTER_FRAME" type="Event" type-id="Event" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+            </operations>
+            <template-parameters>
+              <source-codes>
+                <source-code language="ActionScript" />
+              </source-codes>
+            </template-parameters>
+          </item>
+          <item id="di220387362918625466" cid="C002" type="class" name="Controller" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="01/17/2014 10:07:26">
+            <stereotypes />
+            <tagged-values />
+            <documentation>
+              <text>
+                <content>
+                  <paragraph line-spacing="1">
+                    <p index="0">
+                      <t />
+                      <style font-name="Verdana" font-size="12" font-bold="false" font-italic="false" font-underline="false" font-strikeout="false">
+                        <text>
+                          <solid-brush color="#FF000000" />
+                        </text>
+                      </style>
+                    </p>
+                  </paragraph>
+                </content>
+              </text>
+            </documentation>
+            <cooperation>
+              <participants />
+              <comments />
+            </cooperation>
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <attributes />
+            <operations>
+              <operation id="ob4161005760d4d13a1138a408152ee99294" name="GetKeyboardEvent" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="e  " type="KeyboardEvent" type-id="KeyboardEvent" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="oe83a7084f4fc4120a99b26dcf12d57321" name="GetMouseEvent" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="e " type="MouseEvent" type-id="MouseEvent" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="o28c995eda0f84723aa44c348a7a2faf9184" name="GetEvent" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="e" type="Event" type-id="Event" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="o9db8f6cc6ce74edabc0c46d1edf55ea3725" name="SendMouseAction" type="void" type-id="void" visibility="private" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="e" type="MouseEvent" type-id="MouseEvent" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="o31206c31b36245968ae0b1cb76e0672e878" name="SendKeyboardAction" type="void" type-id="void" visibility="private" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="e" type="KeyboardEvent" type-id="KeyboardEvent" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="oe7fef58f0e6b49ce8aed22b041ca8144992" name="SendFrameEnterAction" type="void" type-id="void" visibility="private" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="e " type="Event" type-id="Event" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+            </operations>
+            <template-parameters>
+              <source-codes>
+                <source-code language="ActionScript" />
+              </source-codes>
+            </template-parameters>
+          </item>
+          <item id="di998080273636463266" cid="C003" type="class" name="View" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="01/17/2014 10:07:56">
+            <stereotypes />
+            <tagged-values />
+            <documentation>
+              <text>
+                <content>
+                  <paragraph line-spacing="1">
+                    <p index="0">
+                      <t />
+                      <style font-name="Verdana" font-size="12" font-bold="false" font-italic="false" font-underline="false" font-strikeout="false">
+                        <text>
+                          <solid-brush color="#FF000000" />
+                        </text>
+                      </style>
+                    </p>
+                  </paragraph>
+                </content>
+              </text>
+            </documentation>
+            <cooperation>
+              <participants />
+              <comments />
+            </cooperation>
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <attributes />
+            <operations>
+              <operation id="o455334995d7e4a32994309f4b8125b1c628" name="AdjustPlayerPaddle" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="speed " type="int" type-id="int" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="oec09ed504bd04abe82d02f1a819eef9f76" name="AdjustAIPaddle" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="speed " type="int" type-id="int" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="o0df2950996f3421f8145287379a7ada5610" name="AdjustScore" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="playerPoints " type="int" type-id="int" default-value="" />
+                  <parameter id="" name=" AIPoints " type="int" type-id="int" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="o7bc91817bd42474f8f0dcb07ddbcee7b666" name="AdjustBall" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="xPos" type="Number" type-id="Number" default-value="" />
+                  <parameter id="" name="yPos" type="Number" type-id="Number" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+            </operations>
+            <template-parameters>
+              <source-codes>
+                <source-code language="ActionScript" />
+              </source-codes>
+            </template-parameters>
+          </item>
+          <item id="di180614342764659472" cid="C004" type="class" name="Model" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creation-date="01/17/2014 10:08:01">
+            <stereotypes />
+            <tagged-values />
+            <documentation>
+              <text>
+                <content>
+                  <paragraph line-spacing="1">
+                    <p index="0">
+                      <t />
+                      <style font-name="Verdana" font-size="12" font-bold="false" font-italic="false" font-underline="false" font-strikeout="false">
+                        <text>
+                          <solid-brush color="#FF000000" />
+                        </text>
+                      </style>
+                    </p>
+                  </paragraph>
+                </content>
+              </text>
+            </documentation>
+            <cooperation>
+              <participants />
+              <comments />
+            </cooperation>
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <attributes />
+            <operations>
+              <operation id="of3f3d315ce9a4bf98c828e3a0184266f312" name="MouseAction" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="e" type="MouseEvent" type-id="MouseEvent" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="oe12df94f406244f0b7eb4c83bb69c0dd397" name="KeyboardAction" type="void" type-id="void" visibility="public" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="e" type="KeyboardEvent" type-id="KeyboardEvent" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="oc6c037dc3060408a9369de3c89a1305a110" name="CalculatePlayerSpeed" type="void" type-id="void" visibility="private" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="e" type="KeyboardEvent" type-id="KeyboardEvent" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="o969ff2f6e7894a628b38afce9fbb1186583" name="CalculateAISpeed" type="void" type-id="void" visibility="private" abstract="false" virtual="false" static="false">
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="od5a6dc128dbc41e9a9e8d64627bb16da406" name="CalculateScore" type="void" type-id="void" visibility="private" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="playerWon" type="Boolean = true" type-id="Boolean = true" default-value="" />
+                  <parameter id="" name="AIWon" type="Boolean = false" type-id="Boolean = false" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="o4d80e6db6288441d82ca52ff0d8d1e40684" name="CalculateBallMovement" type="void" type-id="void" visibility="private" abstract="false" virtual="false" static="false">
+                <parameters>
+                  <parameter id="" name="currentBallSpeed" type="int" type-id="int" default-value="" />
+                  <parameter id="" name="currentBallDirection" type="int" type-id="int" default-value="" />
+                  <parameter id="" name="ballHitWall" type="Boolean" type-id="Uml.Boolean" default-value="" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+            </operations>
+            <template-parameters>
+              <source-codes>
+                <source-code language="ActionScript" />
+              </source-codes>
+            </template-parameters>
+          </item>
+          <item id="di455595698576435325" cid="REL001" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="P3cf893c82b9f410cb04d75c169cc44bc" creation-date="01/17/2014 10:12:02">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <relation from="di220387362918625466" to="di180614342764659472">
+              <start-role id="" name="" multiplicity="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" multiplicity="" navigability="yes" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di901344875991041818" cid="REL002" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="P3cf893c82b9f410cb04d75c169cc44bc" creation-date="01/17/2014 10:13:36">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <relation from="di750395889309805888" to="di220387362918625466">
+              <start-role id="" name="" multiplicity="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" multiplicity="" navigability="yes" association-type="association" visibility="private" />
+            </relation>
+          </item>
+          <item id="di151887570469615112" cid="REL005" type="relationship" name="" style-class="" is-abstract="false" is-root="false" is-leaf="false" is-active="false" creator="P3cf893c82b9f410cb04d75c169cc44bc" creation-date="01/17/2014 12:16:06">
+            <stereotypes />
+            <tagged-values />
+            <associated-diagrams />
+            <owned-items />
+            <style class="default" />
+            <relation from="di180614342764659472" to="di998080273636463266">
+              <start-role id="" name="" multiplicity="" navigability="" association-type="association" visibility="private" />
+              <end-role id="" name="" multiplicity="" navigability="yes" association-type="association" visibility="private" />
+            </relation>
+          </item>
+        </abstract-items>
+        <layer name="Default" visible="true" enabled="true" locked="false">
+          <item id="di280909535573763320" iid="e6a68da9a0114205895bb5e4f11a5e58" show-cid="false" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" creation-date="01/17/2014 10:04:26" order-index="0" type="entity">
+            <layout ax="88" ay="7" awidth="791" aheight="570" x="88" y="7" width="791" height="570" angle="0" />
+          </item>
+          <item id="di750395889309805888" iid="d65980029990493eb1946b041c7d4e66" container="di280909535573763320" container-iid="e6a68da9a0114205895bb5e4f11a5e58" show-cid="false" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" creation-date="01/17/2014 10:04:53" order-index="1" type="entity">
+            <layout ax="374" ay="40" awidth="225" aheight="160" x="374" y="40" width="225" height="160" angle="0" />
+            <class />
+          </item>
+          <item id="di220387362918625466" iid="036df253a3c24ebb9ee0aca40d0dd481" container="di280909535573763320" container-iid="e6a68da9a0114205895bb5e4f11a5e58" show-cid="false" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" creation-date="01/17/2014 10:07:26" order-index="2" type="entity">
+            <layout ax="673" ay="98" awidth="172" aheight="221" x="673" y="98" width="172" height="221" angle="0" />
+            <class />
+          </item>
+          <item id="di998080273636463266" iid="9cf559a5fc8641bba240e26ab288f1ed" container="di280909535573763320" container-iid="e6a68da9a0114205895bb5e4f11a5e58" show-cid="false" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" creation-date="01/17/2014 10:07:56" order-index="3" type="entity">
+            <layout ax="374" ay="222" awidth="225" aheight="196" x="374" y="222" width="225" height="196" angle="0" />
+            <class />
+          </item>
+          <item id="di180614342764659472" iid="3b95d5330e534d7aa072e5245cecc079" container="di280909535573763320" container-iid="e6a68da9a0114205895bb5e4f11a5e58" show-cid="false" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" creation-date="01/17/2014 10:08:01" order-index="4" type="entity">
+            <layout ax="125" ay="77" awidth="188" aheight="256" x="125" y="77" width="188" height="256" angle="0" />
+            <class />
+          </item>
+          <item id="di455595698576435325" iid="a7ee6f8c013a49a98697d566cdd23404" show-cid="false" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" creation-date="01/17/2014 10:12:02" order-index="5" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" x1="673" y1="208" x2="313" y2="206" start-border-pos="0.876106089596295" end-border-pos="0.375509977340698">
+              <points>
+                <point x="673" y="208" />
+                <point x="313" y="206" />
+              </points>
+            </layout>
+            <relation from="di220387362918625466" from-iid="036df253a3c24ebb9ee0aca40d0dd481" to="di180614342764659472" to-iid="3b95d5330e534d7aa072e5245cecc079" />
+            <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15" />
+          </item>
+          <item id="di901344875991041818" iid="95086f5cc09e48c09cad86d1f6786c59" show-cid="false" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" creation-date="01/17/2014 10:13:36" order-index="6" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" x1="599" y1="156" x2="673" y2="180" start-border-pos="0.431913924217224" end-border-pos="0.906924907977764">
+              <points>
+                <point x="599" y="156" />
+                <point x="673" y="180" />
+              </points>
+            </layout>
+            <relation from="di750395889309805888" from-iid="d65980029990493eb1946b041c7d4e66" to="di220387362918625466" to-iid="036df253a3c24ebb9ee0aca40d0dd481" />
+            <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15" />
+          </item>
+          <item id="di151887570469615112" iid="90cfbb4856f6455197c907cc41a34c3e" show-cid="false" show-parent-name="false" show-stereotypes="true" show-tagged-values="false" creation-date="01/17/2014 12:16:06" order-index="9" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" name-position="10,-10" x1="313" y1="245" x2="374" y2="272" start-border-pos="0.414537981152534" end-border-pos="0.936530249459403">
+              <points>
+                <point x="313" y="245" />
+                <point x="374" y="272" />
+              </points>
+            </layout>
+            <relation from="di180614342764659472" from-iid="3b95d5330e534d7aa072e5245cecc079" to="di998080273636463266" to-iid="9cf559a5fc8641bba240e26ab288f1ed" />
+            <role-positions start-role="25,15" end-role="25,-15" start-multiplicity="25,-15" end-multiplicity="25,15" />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+  <documents />
+  <document-templates />
+</sim-project>

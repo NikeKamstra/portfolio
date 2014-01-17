@@ -10,11 +10,11 @@ package src.Controller
 	 */
 	public class Controller 
 	{
-		private const model:Model = new Model();
+		private var model:Model;
 		
-		public function Controller() 
+		public function Controller(view:Object,maxHeight,maxWidth) 
 		{
-			
+			model = new Model(view,maxHeight,maxWidth);
 		}
 		
 		public function GetMouseEvent(e:MouseEvent):void
@@ -24,7 +24,7 @@ package src.Controller
 		
 		public function GetKeyboardEvent(e:KeyboardEvent,keyUp:Boolean):void
 		{
-			model.KeyboardAction(e);
+			model.KeyboardAction(e,keyUp);
 		}
 		
 		public function GetEvent(e:Event):void
