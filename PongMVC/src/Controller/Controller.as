@@ -14,7 +14,7 @@ package src.Controller
 		
 		public function Controller(view:Object,maxHeight,maxWidth) 
 		{
-			model = new Model(view,maxHeight,maxWidth);
+			model = new Model(view,maxHeight,maxWidth); //assign the model class
 		}
 		
 		public function GetMouseEvent(e:MouseEvent):void
@@ -24,7 +24,7 @@ package src.Controller
 		
 		public function GetKeyboardEvent(e:KeyboardEvent,keyUp:Boolean):void
 		{
-			model.KeyboardAction(e,keyUp);
+			model.KeyboardAction(e,keyUp); //send keyboard events and state if the key went down or up
 		}
 		
 		public function GetEvent(e:Event):void

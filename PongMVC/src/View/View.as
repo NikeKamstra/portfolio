@@ -23,34 +23,34 @@ package src.View
 			addChild(currentScreen);
 		}
 		
-		public function AdjustPlayerPaddle(speed:int):void
+		public function AdjustPlayerPaddle(speed:int):void //move the players paddle
 		{
 			playerPaddle.y -= speed;
 		}
 		
-		public function AdjustAIPaddle(speed:int):void
+		public function AdjustAIPaddle(speed:int):void //move the AI paddle
 		{
 			AIPaddle.y -= speed;
 		}
 		
-		public function AdjustScore(playerWon:Boolean):void
+		public function AdjustScore(playerWon:Boolean):void //gives points to respective winner
 		{
 			gameScreen.setScore(!playerWon);
 		}
 		
-		public function AdjustBall(xPos:Number, yPos:Number):void
+		public function AdjustBall(xPos:Number, yPos:Number):void //moves the ball
 		{
 			ball.x += xPos;
 			ball.y += yPos;
 		}
 		
-		public function SetScreenPos(position:Point):void
+		public function SetScreenPos(position:Point):void //set the screen to the good position
 		{
 			currentScreen.x = position.x;
 			currentScreen.y = position.y;
 		}
 		
-		public function SetupGame(playerPos:Point,AIPos:Point,ballPos:Point):void
+		public function SetupGame(playerPos:Point,AIPos:Point,ballPos:Point):void //build the game objects
 		{
 			addChild(playerPaddle);
 			addChild(AIPaddle);
@@ -66,12 +66,12 @@ package src.View
 			ball.y = ballPos.y;
 		}
 		
-		public function RemoveGame(playerWins:Boolean):void
+		public function RemoveGame(playerWins:Boolean):void //go to the endscreen
 		{
 			removeChild(playerPaddle);
 			removeChild(AIPaddle);
 			removeChild(ball);
-			endScreen.SelectWinner(playerWins);
+			endScreen.SelectWinner(playerWins); //return the good message in the endscreen
 		}
 		
 		public function AdjustScreen(type:int):void //0 = startScreen, 1 = gameScreen, 2 = endScreen
@@ -85,6 +85,11 @@ package src.View
 				currentScreen = endScreen;
 			}
 			addChild(currentScreen);
+		}
+		
+		public function SetNewScore():void
+		{
+			gameScreen.SetNewScore(); //set the score to 0-0
 		}
 	}
 

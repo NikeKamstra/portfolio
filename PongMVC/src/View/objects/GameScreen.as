@@ -15,7 +15,7 @@ package src.View.objects
 			AIScore.text = String(AIPoints);
 		}
 		
-		public function setScore(playerWon:Boolean):void
+		public function setScore(playerWon:Boolean):void //gives points to respective winner
 		{
 			if (playerWon) {
 				playerPoints++;
@@ -26,6 +26,13 @@ package src.View.objects
 			AIScore.text = String(AIPoints);
 		}
 		
+		public function SetNewScore():void //reset the score to 0-0
+		{
+			playerPoints = 0;
+			AIPoints = 0;
+			playerScore.text = String(playerPoints);
+			AIScore.text = String(AIPoints);
+		}
 	}
 
 }

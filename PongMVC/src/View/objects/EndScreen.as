@@ -12,7 +12,7 @@ package src.View.objects
 			
 		}
 		
-		public function SelectWinner(PlayerWins):void
+		public function SelectWinner(PlayerWins):void //return the correct winmessage
 		{
 			if (PlayerWins) {
 				playerWins.alpha = 1;

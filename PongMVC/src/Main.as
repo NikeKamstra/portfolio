@@ -28,7 +28,7 @@ package src
 			stage.addEventListener(Event.ENTER_FRAME, SendEvent);
 		}
 		
-		private function SendEvent(e:Object):void
+		private function SendEvent(e:Object):void //send all events to the controller
 		{
 			switch(e.type) {
 				case MouseEvent.CLICK:
