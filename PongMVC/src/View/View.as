@@ -14,6 +14,7 @@ package src.View
 		public const ball:Ball = new Ball();
 		public const startScreen:StartScreen = new StartScreen();
 		public const gameScreen:GameScreen = new GameScreen();
+		public const endScreen:EndScreen = new EndScreen();
 		
 		private var currentScreen = startScreen;
 		
@@ -34,7 +35,7 @@ package src.View
 		
 		public function AdjustScore(playerWon:Boolean):void
 		{
-			gameScreen.setScore(playerWon);
+			gameScreen.setScore(!playerWon);
 		}
 		
 		public function AdjustBall(xPos:Number, yPos:Number):void
@@ -65,10 +66,24 @@ package src.View
 			ball.y = ballPos.y;
 		}
 		
-		public function AdjustScreen():void
+		public function RemoveGame(playerWins:Boolean):void
+		{
+			removeChild(playerPaddle);
+			removeChild(AIPaddle);
+			removeChild(ball);
+			endScreen.SelectWinner(playerWins);
+		}
+		
+		public function AdjustScreen(type:int):void //0 = startScreen, 1 = gameScreen, 2 = endScreen
 		{
 			removeChild(currentScreen);
-			currentScreen = gameScreen;
+			if (type == 0) {
+				currentScreen = startScreen;
+			} else if (type == 1) {
+				currentScreen = gameScreen;
+			} else {
+				currentScreen = endScreen;
+			}
 			addChild(currentScreen);
 		}
 	}

@@ -15,7 +15,7 @@ package src.Model
 		private var maxHeight:int;
 		private var maxWidth:int;
 		private var gameRunning:Boolean = false;
-		private var ballSpeed:Number = 2;
+		private var ballSpeed:Number = 5;
 		private var ballDirection:Point = new Point(Math.floor(Math.random() * 5) - 2, Math.floor(Math.random() * 5) - 2); //random number between 2 and -2
 		private var initialPaddleSpeed:int = 2;
 		private var playerSpeed:Number = initialPaddleSpeed;
@@ -41,7 +41,7 @@ package src.Model
 				const ballPos:Point = new Point(maxWidth / 2, maxHeight / 2);
 				const p:Point = new Point(maxWidth / 2, maxHeight / 2);
 				
-				view.AdjustScreen();
+				view.AdjustScreen(1);
 				view.SetScreenPos(p);
 				view.SetupGame(playerPos, AIPos, ballPos);
 				
@@ -142,6 +142,20 @@ package src.Model
 			if (view.playerPaddle.hitTestPoint(view.ball.x, view.ball.y, true) || view.AIPaddle.hitTestPoint(view.ball.x, view.ball.y, true)) {
 				ballDirection.x *= -1.05;
 			}
+			if (ballDirection.x < 0.2 && ballDirection.x > -0.2) {
+				if (ballDirection.x <= 0) {
+					ballDirection.x = -0.5;
+				} else {
+					ballDirection.x = 0.5;
+				}
+			}
+			if (ballDirection.y < 0.2 && ballDirection.y > -0.2) {
+				if (ballDirection.y <= 0) {
+					ballDirection.y = -0.5;
+				} else {
+					ballDirection.y = 0.5;
+				}
+			}
 		}
 		
 		private function CalculateScore(playerWon:Boolean):void
@@ -151,11 +165,38 @@ package src.Model
 			} else {
 				view.AdjustScore(playerWon);
 			}
+			if (view.gameScreen.playerPoints > 4) {
+				EndGame(true);
+			} else if (view.gameScreen.AIPoints > 4) {
+				EndGame(false);
+			} else {
+				MakeNewRound();
+			}
 		}
 		
-		private function CalculateBallMovement(currentBallSpeed:int, currentBallDirection:int):void
+		private function MakeNewRound():void
 		{
+			const playerPos:Point = new Point(view.playerPaddle.width / 2, maxHeight / 2);
+			const AIPos:Point = new Point(maxWidth - view.playerPaddle.width / 2, maxHeight / 2);
+			const ballPos:Point = new Point(maxWidth / 2, maxHeight / 2);
+			const p:Point = new Point(maxWidth / 2, maxHeight / 2);
 			
+			ballDirection = new Point(Math.floor(Math.random() * 5) - 2, Math.floor(Math.random() * 5) - 2);
+			
+			view.AdjustScreen(1);
+			view.SetScreenPos(p);
+			view.SetupGame(playerPos, AIPos, ballPos);
+		}
+		
+		private function EndGame(PlayerWins):void
+		{
+			const p:Point = new Point(maxWidth / 2, maxHeight / 2);
+			
+			gameRunning = false;
+			
+			view.RemoveGame(PlayerWins);
+			view.AdjustScreen(2);
+			view.SetScreenPos(p);
 		}
 	}
 
