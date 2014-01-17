@@ -12,7 +12,7 @@ package src
 			
 		}
 		
-		public function calc(color:uint, perc:int):uint 
+		public function calc(color:uint, perc:int):uint //producing a good uint of i.e. 50% of 0xF1b91C
 		{
 			const s:String = zeroFill(color.toString(16).toUpperCase(), 6); //converts the uint to a 6 hexa numbers long string
 			

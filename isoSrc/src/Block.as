@@ -10,7 +10,7 @@ package src
 	 */
 	public class Block extends Sprite
 	{
-		private var slctd:Boolean = false;
+		private var selected:Boolean = false;
 		
 		public function Block(tHeight:int,bHeight:int,blockColor:uint,lineColor:uint) 
 		{
@@ -54,26 +54,26 @@ package src
 			graphics.lineTo(tHeight / 2, tHeight / 2 - cornLen - bHeight);
 			graphics.endFill(); //drawing the top side of the "building"
 			
-			addEventListener(MouseEvent.CLICK, selected); //dispatch an event on click
+			addEventListener(MouseEvent.CLICK, getSelected); //dispatch an event on click
 		}
 		
 		public function kill():void //removes all events on removing
 		{
-			removeEventListener(MouseEvent.CLICK, selected);
+			removeEventListener(MouseEvent.CLICK, getSelected);
 			removeEventListener(Event.ENTER_FRAME, loop);
 		}
 		
-		public function selected(e:MouseEvent):void
+		public function getSelected(e:MouseEvent):void
 		{
 			if (parent is Building) {
-				Building(parent).selected();
+				Building(parent).getSelected();
 			} else {
-				if (slctd) { //check if self is already on selection
-					slctd = false;
+				if (selected) { //check if self is already on selection
+					selected = false;
 					removeEventListener(Event.ENTER_FRAME, loop);
 					alpha = 1;
 				} else {
-					slctd = true;
+					selected = true;
 					addEventListener(Event.ENTER_FRAME, loop);
 					alpha = 0.5;
 				}
